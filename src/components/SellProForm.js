@@ -15,7 +15,7 @@ import Bike from '../images/bike1.png';
 import regions from '../constants/regions';
 
 const endpoints = {
-  contact: 'http://localhost:9000/sellSms',
+  contact: '/.netlify/functions/sellSms',
 };
 
 const axios = require('axios');
