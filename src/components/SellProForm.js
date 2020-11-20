@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
 import {
   Container,
   Form,
@@ -33,7 +32,7 @@ function SellProgasModal(props) {
     dataValue: 'nairobi',
   });
 
-  const handleAll = e => {
+  const handleAll = (e) => {
     const form = e.currentTarget;
     if (form.checkValidity() === false) {
       e.preventDefault();
@@ -44,7 +43,7 @@ function SellProgasModal(props) {
 
     let { phone } = formState;
     let data = { phone };
-    axios.post(endpoints.contact, JSON.stringify(data)).then(response => {
+    axios.post(endpoints.contact, JSON.stringify(data)).then((response) => {
       if (response.status !== 200) {
         handleError();
       } else {
@@ -64,7 +63,7 @@ function SellProgasModal(props) {
     });
   };
 
-  const handleError = msg => {
+  const handleError = (msg) => {
     setFormState({
       loading: false,
       error: true,
@@ -72,11 +71,11 @@ function SellProgasModal(props) {
     });
   };
 
-  const onChange = e => {
+  const onChange = (e) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
 
-  const onChangeRegionData = e => {
+  const onChangeRegionData = (e) => {
     setRegionData({ ...regionData, [e.target.name]: e.target.value });
   };
 
@@ -86,20 +85,21 @@ function SellProgasModal(props) {
   return (
     <Modal
       {...props}
-      size="xl"
-      backdrop="static"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
+      size='xl'
+      backdrop='static'
+      aria-labelledby='contained-modal-title-vcenter'
+      centered>
       <Modal.Header closeButton>
-        <Modal.Title className="model-heading">Become a Pro</Modal.Title>
+        <Modal.Title className='model-heading'>Become a Pro</Modal.Title>
       </Modal.Header>
-      <Modal.Body className="show-grid">
-        <Container className="get-form">
-          <Row className="section-heading">
+      <Modal.Body className='show-grid'>
+        <Container className='get-form'>
+          <Row className='section-heading'>
             <Col>
               <h5>
-                If you would like to sell ProGas by becoming one of our proud retailer partners, kindly enter your details below. A representative from our sales team will reach out shortly.  
+                If you would like to sell ProGas by becoming one of our proud
+                retailer partners, kindly enter your details below. A
+                representative from our sales team will reach out shortly.
               </h5>
             </Col>
           </Row>
@@ -107,117 +107,112 @@ function SellProgasModal(props) {
           <Row>
             <Col>
               <Form
-                name="SellProGas Request Final v1"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                action="/thankyou/"
+                name='SellProGas Request Final v1'
+                method='POST'
+                data-netlify='true'
+                data-netlify-honeypot='bot-field'
+                action='/thankyou'
                 noValidate
                 validated={validated}
-                onSubmit={handleAll}
-              >
+                onSubmit={handleAll}>
                 <input
-                  type="hidden"
-                  name="form-name"
-                  value="SellProGas Request Final v1"
+                  type='hidden'
+                  name='form-name'
+                  value='SellProGas Request Final v1'
                 />
                 <div hidden>
                   <Form.Label>
-                    Don't Fill this input: <input name="bot-field" />
+                    Don't Fill this input: <input name='bot-field' />
                   </Form.Label>
                 </div>
-                <Form.Row className="label-text">
+                <Form.Row className='label-text'>
                   <Col>
-                    <Form.Label className="label-name">Full Name</Form.Label>
+                    <Form.Label className='label-name'>Full Name</Form.Label>
                     <Form.Control
-                      className="form-input"
-                      type="text"
-                      name="name"
+                      className='form-input'
+                      type='text'
+                      name='name'
                       onChange={onChange}
-                      pattern="^[a-zA-Z ]*$"
-                      placeholder="Full Name"
+                      pattern='^[a-zA-Z ]*$'
+                      placeholder='Full Name'
                       required
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    <Form.Control.Feedback type="invalid">
+                    <Form.Control.Feedback type='invalid'>
                       Please add a name.
                     </Form.Control.Feedback>
                   </Col>
                   <Col>
-                    <Form.Label className="label-name">Phone Number</Form.Label>
+                    <Form.Label className='label-name'>Phone Number</Form.Label>
                     <Form.Control
-                      className="form-input"
-                      type="tel"
-                      name="phone"
-                      pattern="^\d{10}$"
+                      className='form-input'
+                      type='tel'
+                      name='phone'
+                      pattern='^\d{10}$'
                       onChange={onChange}
-                      placeholder="Enter Phone 07xxxx"
+                      placeholder='Enter Phone 07xxxx'
                       required
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    <Form.Control.Feedback type="invalid">
+                    <Form.Control.Feedback type='invalid'>
                       Please enter a valid phone number.
                     </Form.Control.Feedback>
                   </Col>
                 </Form.Row>
-                <Form.Row className="label-text">
+                <Form.Row className='label-text'>
                   <Col>
-                    <Form.Label className="label-name">Location</Form.Label>
+                    <Form.Label className='label-name'>Location</Form.Label>
                     <Form.Control
-                      className="form-input"
-                      type="text"
-                      name="dataValue"
+                      className='form-input'
+                      type='text'
+                      name='dataValue'
                       onChange={onChangeRegionData}
-                      pattern="^[a-zA-Z ]*$"
+                      pattern='^[a-zA-Z ]*$'
                       required
-                      as="select"
-                    >
-                      <option value="nairobi">Nairobi</option>
-                      <option value="central">Central</option>
-                      <option value="western">Western</option>
-                      <option value="nakuru">Nakuru/Naivasha</option>
-                      <option value="southrift">South Rift</option>
-                      <option value="northrift">North Rift</option>
-                      <option value="eastern">Eastern</option>
-                      <option value="other">Other</option>
+                      as='select'>
+                      <option value='nairobi'>Nairobi</option>
+                      <option value='central'>Central</option>
+                      <option value='western'>Western</option>
+                      <option value='nakuru'>Nakuru/Naivasha</option>
+                      <option value='southrift'>South Rift</option>
+                      <option value='northrift'>North Rift</option>
+                      <option value='eastern'>Eastern</option>
+                      <option value='other'>Other</option>
                     </Form.Control>
 
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    <Form.Control.Feedback type="invalid">
+                    <Form.Control.Feedback type='invalid'>
                       Please add a location
                     </Form.Control.Feedback>
                   </Col>
                   <Col>
-                    <Form.Label className="label-name">Area</Form.Label>
+                    <Form.Label className='label-name'>Area</Form.Label>
                     <Form.Control
-                      className="form-input"
-                      type="text"
+                      className='form-input'
+                      type='text'
                       required
-                      as="select"
-                    >
-                      {dataOptions.map(o => (
+                      as='select'>
+                      {dataOptions.map((o) => (
                         <option key={o.id} value={o.id}>
                           {o.text}
                         </option>
                       ))}
                     </Form.Control>
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    <Form.Control.Feedback type="invalid">
+                    <Form.Control.Feedback type='invalid'>
                       Please add your area
                     </Form.Control.Feedback>
                   </Col>
                 </Form.Row>
-                <Form.Row className="label-text">
+                <Form.Row className='label-text'>
                   <Col></Col>
                 </Form.Row>
-                <Link to="thankyou">
-                <Button className="form-btn" type="submit">
+                <Button className='form-btn' type='submit'>
                   Request a Callback
                 </Button>
-                </Link>
               </Form>
             </Col>
-            <Col sm={6} className="bike">
+            <Col sm={6} className='bike'>
               <Image src={Bike} fluid />
             </Col>
           </Row>
@@ -234,13 +229,12 @@ export default function SellProForm() {
     <Row>
       <Col>
         <Card
-          className="text-center h-100 card-color card-section"
-          onClick={() => setModalShow(true)}
-        >
+          className='text-center h-100 card-color card-section'
+          onClick={() => setModalShow(true)}>
           <Card.Body>
-            <Image class="sell-img" src={sellProgasImg} fluid />
+            <Image class='sell-img' src={sellProgasImg} fluid />
             <br />
-            <Button className="pro-btn">Sell ProGas</Button>
+            <Button className='pro-btn'>Sell ProGas</Button>
           </Card.Body>
         </Card>
         <SellProgasModal show={modalShow} onHide={() => setModalShow(false)} />

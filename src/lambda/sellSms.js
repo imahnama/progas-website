@@ -24,7 +24,7 @@ exports.handler = async (event, context) => {
   const options = {
     to: [`${phoneNumber}`],
     message:
-      'We can’t wait to make you a PRO! A sales representative will call you back shortly! #YouDeserveBetter',
+      'We cannot wait to make you a PRO! A sales representative will call you back shortly! #YouDeserveBetter',
   };
 
   try {

@@ -23,7 +23,8 @@ exports.handler = async (event, context) => {
   const phoneNumber = phoneArray.join('');
   const options = {
     to: [`${phoneNumber}`],
-    message: 'We can’t wait to make you a PRO! A sales representative will call you back shortly! #YouDeserveBetter',
+    message:
+      'Thank you for choosing ProGas!\nWe will call you back shortly.\nOur operating hours are:\nWeekdays: 7am-7pm\nWeekends: 7:30am-5:30pm\n#YouDeserveBetter',
   };
 
   try {
