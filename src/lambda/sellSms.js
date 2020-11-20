@@ -24,7 +24,11 @@ exports.handler = async (event, context) => {
   const options = {
     to: [`${phoneNumber}`],
     message:
-      'Thank You! Our call center opens at 7am and a member of our team will be in touch within an hour of opening.',
+      'Thank you for choosing ProGas! We’ll call you back shortly.
+                Our operating hours are:
+                Weekdays: 7am-7pm
+                Weekends: 7:30am-5:30pm
+                #YouDeserveBetter',
   };
 
   try {

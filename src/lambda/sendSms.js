@@ -23,7 +23,11 @@ exports.handler = async (event, context) => {
   const phoneNumber = phoneArray.join('');
   const options = {
     to: [`${phoneNumber}`],
-    message: 'Thank You! Our Team will be in touch within 15 Minutes.',
+    message: 'Thank you for choosing ProGas! We’ll call you back shortly.
+              Our operating hours are: 
+              Weekdays: 7am-7pm
+              Weekends: 7:30am-5:30pm
+              #YouDeserveBetter',
   };
 
   try {

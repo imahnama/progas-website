@@ -10,6 +10,7 @@ const regions = {
     { id: '8', text: 'Kayole Masimba' },
     { id: '9', text: 'Kayole Mugendi' },
     { id: '10', text: 'Uthiru 87' },
+    { id: '11', text: 'Other' },
   ],
 
   central: [
@@ -33,6 +34,7 @@ const regions = {
     { id: '18', text: 'Othaya' },
     { id: '19', text: 'Ruiri' },
     { id: '20', text: 'Timau' },
+    { id: '21', text: 'Other' },
   ],
 
   eastern: [
@@ -61,6 +63,7 @@ const regions = {
     { id: '23', text: 'Tala Police Post' },
     { id: '24', text: 'Tulia' },
     { id: '25', text: 'Wote-Shimo' },
+    { id: '26', text: 'Other' },
   ],
 
   western: [
@@ -87,6 +90,7 @@ const regions = {
     { id: '21', text: 'Sibanga' },
     { id: '22', text: 'Ugunja' },
     { id: '23', text: 'Webuye' },
+    { id: '24', text: 'Other' },
   ],
 
   nakuru: [
@@ -119,6 +123,7 @@ const regions = {
     { id: '27', text: 'Salgaa' },
     { id: '28', text: 'South Kinangop Kwaharaka' },
     { id: '29', text: 'Suswa' },
+    { id: '30', text: 'Other' },
   ],
 
   southrift: [
@@ -141,6 +146,7 @@ const regions = {
     { id: '17', text: 'Oyugis' },
     { id: '18', text: 'Rongo' },
     { id: '19', text: 'Sondu' },
+    { id: '20', text: 'Other' },
   ],
 
   northrift: [
@@ -165,7 +171,12 @@ const regions = {
     { id: '19', text: 'Muhoroni' },
     { id: '20', text: 'Total Junction' },
     { id: '21', text: 'Turbo' },
+    { id: '22', text: 'Other' },
   ],
+
+  other: [
+    {id: '1', text: 'Other'},
+  ]
 };
 
 export default regions;

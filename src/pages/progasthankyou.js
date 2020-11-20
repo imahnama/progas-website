@@ -16,7 +16,11 @@ export default function GetProgasThankYouPage() {
         <Row>
           <Col sm={6}>
             <h4 className="thanks-note">
-              Thank You! Our Team will be in touch within 15 Minutes.
+              Thank you for being in touch! A representative from our call
+              centre will reach out shortly. <br></br>
+              Polite reminder Our operating hours are: <br></br>
+              Weekdays: 7am-7pm <br></br>
+              Weekends: 7:30am-5:30pm
             </h4>
           </Col>
           <Col sm={6} className="bike">

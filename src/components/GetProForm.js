@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
 import {
   Container,
   Form,
@@ -15,7 +14,7 @@ import Bike from '../images/bike1.png';
 import regions from '../constants/regions';
 
 const endpoints = {
-  contact: '/.netlify/functions/sendSms',
+  contact: 'http://localhost:9000/sendSms',
 };
 
 const axios = require('axios');
@@ -99,8 +98,10 @@ function GetProgasModal(props) {
           <Row className="section-heading">
             <Col>
               <h5>
-                Leave your details and we will contact you to connect you with a
-                ProShop or Retailer
+                To Get ProGas, kindly request a callback from our call centre by
+                entering your details below. A representative will reach out
+                shortly to connect you to one of our ProShops in Kenya, or refer
+                you to a retailer in your local area.
               </h5>
             </Col>
           </Row>
@@ -180,6 +181,7 @@ function GetProgasModal(props) {
                       <option value="southrift">South Rift</option>
                       <option value="northrift">North Rift</option>
                       <option value="eastern">Eastern</option>
+                      <option value="other">Other</option>
                     </Form.Control>
 
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -199,6 +201,7 @@ function GetProgasModal(props) {
                         <option key={o.id} value={o.id}>
                           {o.text}
                         </option>
+
                       ))}
                     </Form.Control>
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -210,11 +213,9 @@ function GetProgasModal(props) {
                 <Form.Row className="label-text">
                   <Col></Col>
                 </Form.Row>
-                <Link to="progasthankyou">
-                  <Button className="form-btn" type="submit">
-                    Request a Callback
-                  </Button>
-                  </Link>
+                <Button className="form-btn" type="submit">
+                  Request a Callback
+                </Button>
               </Form>
             </Col>
             <Col className="bike">

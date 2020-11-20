@@ -15,7 +15,7 @@ import Bike from '../images/bike1.png';
 import regions from '../constants/regions';
 
 const endpoints = {
-  contact: '/.netlify/functions/sellSms',
+  contact: 'http://localhost:9000/sellSms',
 };
 
 const axios = require('axios');
@@ -180,6 +180,7 @@ function SellProgasModal(props) {
                       <option value="southrift">South Rift</option>
                       <option value="northrift">North Rift</option>
                       <option value="eastern">Eastern</option>
+                      <option value="other">Other</option>
                     </Form.Control>
 
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
