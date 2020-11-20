@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'gatsby';
 import {
   Container,
   Form,
@@ -209,9 +210,11 @@ function GetProgasModal(props) {
                 <Form.Row className="label-text">
                   <Col></Col>
                 </Form.Row>
-                <Button className="form-btn" type="submit">
-                  Request a Callback
-                </Button>
+                <Link to="progasthankyou">
+                  <Button className="form-btn" type="submit">
+                    Request a Callback
+                  </Button>
+                  </Link>
               </Form>
             </Col>
             <Col className="bike">
