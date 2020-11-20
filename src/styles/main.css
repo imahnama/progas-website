@@ -213,7 +213,7 @@ Social Media Styles
   font-weight: bolder;
   text-transform: uppercase;
   font-family: var(--ff-primary);
-  margin-left: 2rem;
+  margin-left: 10px;
   margin-bottom: 2rem;
 }
 
@@ -396,7 +396,7 @@ ProGas Forms Footer Styles
 }
 
 .get-form {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .get-form h1 {
@@ -436,7 +436,7 @@ h1 {
   font-weight: bolder;
   text-transform: uppercase;
   font-family: var(--ff-primary);
-   margin-left: 10px;
+  margin-left: 10px;
 }
 
 .gallery-head h1 {
@@ -473,6 +473,7 @@ h1 {
 
 .thanks-note {
   margin-top: 6rem;
+  margin-left: 10px;
 }
 
 .progaimg {
