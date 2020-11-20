@@ -218,6 +218,7 @@ function GetProgasModal(props) {
                 <Button className="form-btn" type="submit">
                   Request a Callback
                 </Button>
+                </Link>
               </Form>
             </Col>
             <Col className="bike">
