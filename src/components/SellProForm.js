@@ -99,8 +99,7 @@ function SellProgasModal(props) {
           <Row className="section-heading">
             <Col>
               <h5>
-                Leave your details and we will contact you about becoming one of
-                our proud Retailers
+                If you would like to sell ProGas by becoming one of our proud retailer partners, kindly enter your details below. A representative from our sales team will reach out shortly.  
               </h5>
             </Col>
           </Row>

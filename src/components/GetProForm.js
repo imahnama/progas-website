@@ -99,10 +99,7 @@ function GetProgasModal(props) {
           <Row className="section-heading">
             <Col>
               <h5>
-                To Get ProGas, kindly request a callback from our call centre by
-                entering your details below. A representative will reach out
-                shortly to connect you to one of our ProShops in Kenya, or refer
-                you to a retailer in your local area.
+                To get ProGas, kindly enter your details below. We will reach out shortly to connect you to one of our ProShops.
               </h5>
             </Col>
           </Row>

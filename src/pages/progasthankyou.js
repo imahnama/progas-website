@@ -18,6 +18,7 @@ export default function GetProgasThankYouPage() {
             <h4 className="thanks-note">
               Thank you for being in touch! A representative from our call
               centre will reach out shortly. <br></br>
+              <br></br>
               Polite reminder Our operating hours are: <br></br>
               Weekdays: 7am-7pm <br></br>
               Weekends: 7:30am-5:30pm
