@@ -11,7 +11,7 @@ import {
   Card,
   Modal,
 } from 'react-bootstrap';
-import getProgasImg from '../images/get.png';
+import getProgasImg from '../images/sell.png';
 import Bike from '../images/bike1.png';
 import regions from '../constants/regions';
 

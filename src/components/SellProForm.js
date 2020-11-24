@@ -10,12 +10,12 @@ import {
   Card,
   Modal,
 } from 'react-bootstrap';
-import sellProgasImg from '../images/sell.png';
+import sellProgasImg from '../images/get.png';
 import Bike from '../images/bike1.png';
 import regions from '../constants/regions';
 
 const endpoints = {
-  contact: 'http://localhost:9000/sellSms',
+  contact: '/.netlify/functions/sellSms',
 };
 
 const axios = require('axios');
@@ -34,6 +34,8 @@ function SellProgasModal(props) {
   });
 
   const handleAll = (e) => {
+    e.preventDefault();
+
     const form = e.currentTarget;
     if (form.checkValidity() === false) {
       e.preventDefault();
@@ -44,13 +46,17 @@ function SellProgasModal(props) {
 
     let { phone } = formState;
     let data = { phone };
-    axios.post(endpoints.contact, JSON.stringify(data)).then((response) => {
-      if (response.status !== 200) {
-        handleError();
-      } else {
-        handleSuccess();
-      }
-    });
+    axios
+      .post(endpoints.contact, JSON.stringify(data))
+      .then((response) => {
+        if (response.status !== 200) {
+          handleError();
+        } else {
+          handleSuccess();
+          return navigate('/thankyou');
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   const handleSuccess = () => {
@@ -108,19 +114,13 @@ function SellProgasModal(props) {
           <Row>
             <Col>
               <Form
-                name='SellProGas Request Final v1'
+                name='SellProGas'
                 method='POST'
                 data-netlify='true'
                 data-netlify-honeypot='bot-field'
-                action='/thankyou'
-                noValidate
                 validated={validated}
                 onSubmit={handleAll}>
-                <input
-                  type='hidden'
-                  name='form-name'
-                  value='SellProGas Request Final v1'
-                />
+                <input type='hidden' name='form-name' value='SellProGas' />
                 <div hidden>
                   <Form.Label>
                     Don't Fill this input: <input name='bot-field' />
