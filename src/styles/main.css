@@ -134,7 +134,7 @@ Slider Styles
   transition: none;
   height: 20px;
   margin: auto;
-  opacity:0;
+  opacity:5;
 }
 
 .carousel .control-prev.control-arrow {
