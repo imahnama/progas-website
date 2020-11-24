@@ -120,11 +120,7 @@ function GetProgasModal(props) {
                 data-netlify-honeypot='bot-field'
                 validated={validated}
                 onSubmit={handleAll}>
-                <input
-                  type='hidden'
-                  name='form-name'
-                  value='GetProGas'
-                />
+                <input type='hidden' name='form-name' value='GetProGas' />
                 <div hidden>
                   <Form.Label>
                     Don't Fill this input: <input name='bot-field' />
