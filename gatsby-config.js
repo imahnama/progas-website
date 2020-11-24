@@ -1,5 +1,13 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
 module.exports = {
+  siteMetadata: {
+   title: 'PROGAS Website',
+   description:
+     'A website for ProGas',
+   siteurl: 'https://progas-staging.netlify.app/', // No trailing slash allowed!
+   image: '/PROGAS6kg13kgpinkcylinder.jpg', // Path to your image you placed in the 'static' folder
+   twitterUsername: '@ProGasKe',
+ },
   plugins: [
     {
       resolve: 'gatsby-plugin-anchor-links',
@@ -12,7 +20,7 @@ module.exports = {
     app.use(
       '/.netlify/functions/',
       createProxyMiddleware({
-        target: 'http://localhost:9000',
+        target: 'https://progas-staging.netlify.app/.netlify/functions',
         pathRewrite: {
           '/.netlify/functions/': '',
         },

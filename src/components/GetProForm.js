@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
+import { navigate } from 'gatsby';
+
 import {
   Container,
   Form,
@@ -34,6 +35,8 @@ function GetProgasModal(props) {
   });
 
   const handleAll = (e) => {
+    e.preventDefault();
+
     const form = e.currentTarget;
     if (form.checkValidity() === false) {
       e.preventDefault();
@@ -44,13 +47,17 @@ function GetProgasModal(props) {
 
     let { phone } = formState;
     let data = { phone };
-    axios.post(endpoints.contact, JSON.stringify(data)).then((response) => {
-      if (response.status !== 200) {
-        handleError();
-      } else {
-        handleSuccess();
-      }
-    });
+    axios
+      .post(endpoints.contact, JSON.stringify(data))
+      .then((response) => {
+        if (response.status !== 200) {
+          handleError();
+        } else {
+          handleSuccess();
+          return navigate('/progasthankyou');
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   const handleSuccess = () => {
@@ -107,18 +114,16 @@ function GetProgasModal(props) {
           <Row>
             <Col>
               <Form
-                name='GetProGas Request Final v1'
+                name='GetProGas'
                 method='POST'
                 data-netlify='true'
                 data-netlify-honeypot='bot-field'
-                action='/progasthankyou'
-                noValidate
                 validated={validated}
                 onSubmit={handleAll}>
                 <input
                   type='hidden'
                   name='form-name'
-                  value='GetProGas Request Final v1'
+                  value='GetProGas'
                 />
                 <div hidden>
                   <Form.Label>
@@ -207,11 +212,9 @@ function GetProgasModal(props) {
                 <Form.Row className='label-text'>
                   <Col></Col>
                 </Form.Row>
-                <Link to="progasthankyou">
                 <Button className='form-btn' type='submit'>
                   Request a Callback
                 </Button>
-                </Link>
               </Form>
             </Col>
             <Col className='bike'>
@@ -225,7 +228,7 @@ function GetProgasModal(props) {
 }
 
 export default function GetProForm() {
-  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow, setModalShow] = useState(false);
 
   return (
     <Row>

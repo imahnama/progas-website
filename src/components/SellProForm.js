@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
 import {
   Container,
   Form,
@@ -15,7 +14,7 @@ import Bike from '../images/bike1.png';
 import regions from '../constants/regions';
 
 const endpoints = {
-  contact: '/.netlify/functions/sellSms',
+  contact: 'http://localhost:9000/sellSms',
 };
 
 const axios = require('axios');
@@ -208,11 +207,9 @@ function SellProgasModal(props) {
                 <Form.Row className='label-text'>
                   <Col></Col>
                 </Form.Row>
-                <Link to="thankyou">
                 <Button className='form-btn' type='submit'>
                   Request a Callback
                 </Button>
-                </Link>
               </Form>
             </Col>
             <Col sm={6} className='bike'>
